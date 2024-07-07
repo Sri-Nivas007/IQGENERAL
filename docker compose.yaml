@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+    db:
+        container_name: iq_db_proj
+        image: postgres:latest
+        restart: always
+        environment:
+            POSTGRES_USER: iq
+            POSTGRES_PASSWORD: admin123
+            POSTGRES_DB: testdb
+        volumes:
+            - ./db-data/:/var/lib/postgresql/data/
+        ports:
+            - "5433:5432"
